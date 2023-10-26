@@ -45,7 +45,7 @@ body{
 
 }
 
-.symbol{
+.symbol, .equal{
     color: white;
     background-color: orange;
 }
@@ -59,7 +59,7 @@ body{
     color: white;
 }
 
-.symbol,.extra,.number{
+.symbol,.extra,.number,.equal{
     display: flex;
     justify-content: center;
     align-items: center;
