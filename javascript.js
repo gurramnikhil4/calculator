@@ -24,9 +24,9 @@ symbol.addEventListener('click',()=>{
     var1=result;
     updateDisplay();
     var2="";
-    symbolLast=true;
     }
     op=symbol.textContent;
+    symbolLast=true;
 });});
 
 let equal=document.querySelector('.equal');
@@ -54,33 +54,29 @@ clear.addEventListener('click',()=>{
     updateDisplay();
 });
 
-
-
 let var1="", var2="", op="",result=null, symbolLast=false;
 
-function operate(x,y,o){
-    x=Number(x);
-    y=Number(y);
-    if(!o)return x;
+function operate(){
+    if(!op)return var1;
+    // if(symbolLast)var2=var1;
 
-    if(symbolLast)y=x;
-    switch(o){
+    switch(op){
         case '+':{
-            return x+y;
+            return Number(var1)+Number(var2);
         }
         case '-':{
-            return x-y;
+            return Number(var1)-Number(var2);
         }
         case 'x':{
-            return x*y;
+            return Number(var1)*Number(var2);
         }
         case '/':{
-            if(y==0)return NaN;
-            return x/y;
+            if(Number(var2)==0)return NaN;
+            return Number(var1)/Number(y);
         }
         case '%':{
-            if(y==0)return NaN;
-            return x%y;
+            if(Number(y)==0)return NaN;
+            return Number(var1)%Number(y);
         }
     }
 }
